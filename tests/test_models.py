@@ -60,3 +60,25 @@ def test_daily_min_string():
         error_expected = daily_min([['Hello', 'there'], ['General', 'Kenobi']])
         
 
+# Let's add an automated testing function
+@pytest.mark.parametrize("test", # requires only one input argument
+                         [
+                             ([['Hello', 'there'], ['General', 'Kenobi']]), # tuple with the one input
+                             ([['Apple', 'pie'], ['my', 'favorite']])
+                         ])
+def test_daily_min_string_auto(test):
+    """Test for TypeError when passing strings"""
+
+    with pytest.raises(TypeError):
+        _ = daily_min([['Hello', 'there'], ['General', 'Kenobi']])
+        
+# Example from materials with automated test function        
+@pytest.mark.parametrize(
+    "test, expected",
+    [
+        ([ [0, 0], [0, 0], [0, 0] ], [0, 0]),
+        ([ [1, 2], [3, 4], [5, 6] ], [3, 4]),
+    ])
+def test_daily_mean_auto(test, expected):
+    """Test mean function works for array of zeroes and positive integers."""
+    npt.assert_array_equal(daily_mean(np.array(test)), np.array(expected))
