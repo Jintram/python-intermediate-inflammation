@@ -16,7 +16,13 @@ jobs:
 
     # Same key-value pairs as in "Defining Our Workflow" section
     steps:
-
+    
+    # to check style; 
+    # --exit-zero makes sure this doesn't break codebase if violation; also convenient output format added
+    - name: Check style with Ruff
+      run: |
+        python3 -m ruff check --exit-zero --output-format=github inflammation
+        
     - name: Checkout repository
       uses: actions/checkout@v4
 

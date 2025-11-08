@@ -9,3 +9,12 @@ requires-python = ">=3.9"
 
 [tool.setuptools]
 packages = ["inflammation"]
+
+# addition MW (to enable more ruff rules)
+# not sure this works; suggested by ChatGPT
+#[lint]
+#select = ["E", "F", "A"]
+
+# ruff rules, as suggested by workshop earlier
+[tool.ruff.lint]
+select = ["E", "W", "F", "UP", "A", "B", "SIM", "I"]
