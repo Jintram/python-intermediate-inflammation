@@ -6,6 +6,7 @@ import os
 import numpy as np
 
 from inflammation import models, views
+    # import importlib; importlib.reload(models); importlib.reload(views)
 
 
 def analyse_data(data_dir):
